@@ -1,6 +1,4 @@
 <?php
-/*header("Access-Control-Allow-Origin: *");
-header('Content-Type: text/plain; charset=utf-8');*/
 require_once("vendor/autoload.php");
 require_once("helpers/arrays.helper.php");
 
@@ -26,6 +24,8 @@ try{
                 $err = $cliente->getError();
                
                 if ( !$err ) {
+                   /*  echo json_encode( mb_convert_encoding($respuesta, 'ISO-8859-1', 'UTF-8') );
+                    exit; */
                     if(intval($respuesta['RespuestaAutorizacionComprobante']['numeroComprobantes']) > 0){
                   
                         if($respuesta['RespuestaAutorizacionComprobante']['autorizaciones']['autorizacion']){
